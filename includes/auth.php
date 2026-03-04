@@ -8,7 +8,7 @@ require_once __DIR__ . '/security.php';
 function requireLogin() {
     checkSessionTimeout(); // Check session timeout
     if (!isset($_SESSION['user_id'])) {
-        header("Location: /challenge5a/login.php");
+        header("Location: /login.php");
         exit();
     }
 }
@@ -16,7 +16,7 @@ function requireLogin() {
 function requireTeacher() {
     requireLogin();
     if ($_SESSION['role'] !== 'teacher') {
-        header("Location: /challenge5a/index.php");
+        header("Location: /index.php");
         exit();
     }
 }

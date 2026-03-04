@@ -10,12 +10,14 @@ if (session_status() === PHP_SESSION_NONE) {
     initSecureSession();
 }
 
-define('DB_HOST', 'sql12.freesqldatabase.com');
-define('DB_USER', '');
-define('DB_PASS', '');
-define('DB_NAME', 'sql12818262');
 
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'challenge5a');
+define('DB_PORT', 3306);
+
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 $conn->set_charset("utf8mb4");
 
 if ($conn->connect_error) {

@@ -139,7 +139,7 @@ function checkSessionTimeout(int $timeout = 1800): void {
         // Session expired
         session_unset();
         session_destroy();
-        header("Location: /challenge5a/login.php?timeout=1");
+        header("Location: /login.php?timeout=1");
         exit();
     }
     

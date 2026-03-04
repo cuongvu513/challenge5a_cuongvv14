@@ -7,7 +7,7 @@ function e(string $str): string {
 
 function sanitizeString(string $input, int $maxLen = 255): string {
     $input = trim($input);
-    $input = strip_tags($input);
+    $input = htmlspecialchars($input, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     return substr($input, 0, $maxLen);
 }
 
